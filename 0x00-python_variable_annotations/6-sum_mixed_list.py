@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Sum muxed list Module"""
 from typing import List, Union
 
