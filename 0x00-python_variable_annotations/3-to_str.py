@@ -9,7 +9,7 @@ def to_str(n: float) -> str:
         n (float): float to convert
 
     Returns:
-        str: string representation of the float number
+        str: string representation of the number
     """
 
     return str(n)
