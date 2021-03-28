@@ -3,11 +3,11 @@
 
 
 from typing import List
-from re import sub
+import re
 
 
-def filter_datum(fields: List[str], redaction: str, message: str,
-                 separator: str) -> str:
+def filter_datum(fields: List[str], redaction: str,
+                 message: str, separator: str) -> str:
     """Filter datum
 
     Args:
@@ -20,6 +20,6 @@ def filter_datum(fields: List[str], redaction: str, message: str,
         str: log message obfuscated
     """
     for item in fields:
-        message = sub(f'{item}=.+?{separator}',
-                      f'{item}={redaction}{separator}', message)
+        message = re.sub(f'{item}=.*?{separator}',
+                         f'{item}={redaction}{separator}', message)
     return message
