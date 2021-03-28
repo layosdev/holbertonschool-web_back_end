@@ -86,3 +86,23 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
             database=os.getenv("PERSONAL_DATA_DB_NAME")
         )
     return conection
+
+
+def main():
+    """Main
+    """
+    conection = get_db()
+    cursor = conection.cursor()
+    cursor.execute("SELECT CONCAT('name=', name, ';ssn=', ssn, ';ip=', ip, \
+        ';user_agent', user_agent, ';') AS message FROM users;")
+    logger = get_logger()
+
+    for item in cursor:
+        logger.log(logging.INFO, item[0])
+
+    cursor.close()
+    conection.close()
+
+
+if __name__ == "__main__":
+    main()
