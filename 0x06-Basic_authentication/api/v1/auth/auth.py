@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Auth Module"""
+from flask import request
+from typing import List, TypeVar
+
+
+class Auth:
+    """Auth
+    """
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
+        """Require Auth
+
+        Args:
+            path (str): path
+            excluded_paths (List[str]): excluded paths
+
+        Returns:
+            bool: Status
+        """
+        return False
+
+    def authorization_header(self, request=None) -> str:
+        """Authorization header
+
+        Args:
+            request ([type], optional): Description. Defaults to None.
+
+        Returns:
+            str: Header
+        """
+        return None
+
+    def current_user(self, request=None) -> TypeVar('User'):
+        """Current user
+        """
+        return None
