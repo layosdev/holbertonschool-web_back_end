@@ -18,7 +18,7 @@ class Auth:
             bool: Status
         """
         if path is not None:
-            if path[len(path) - 1] is not '/':
+            if path[len(path) - 1] != '/':
                 path += '/'
         else:
             return True
