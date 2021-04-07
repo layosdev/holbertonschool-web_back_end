@@ -8,7 +8,7 @@ class SessionAuth(Auth):
     """SessionAuth
 
     Args:
-        Auth ([type]): Auth
+        Auth ([auth]): Auth
     """
     user_id_by_session_id = {}
 
