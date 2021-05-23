@@ -1,0 +1,41 @@
+const fs = require('fs');
+
+function countStudents(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (error, fileData) => {
+      if (error) {
+        reject(Error('Cannot load the database'));
+        return;
+      }
+
+      if (fileData) {
+        const fields = {};
+        let data = fileData.toString().split('\n');
+        data = data.filter((element) => element.length > 0);
+        data.shift();
+        console.log(`Number of students: ${data.length}`);
+
+        data.forEach((x) => {
+          const student = x.split(',');
+          if (!fields[student[3]]) {
+            fields[student[3]] = [];
+          }
+          fields[student[3]].push(student[0]);
+        });
+
+        for (const i in fields) {
+          if (i) {
+            console.log(
+              `Number of students in ${i}: ${
+                fields[i].length
+              }. List: ${fields[i].join(', ')}`,
+            );
+          }
+        }
+      }
+      resolve();
+    });
+  });
+}
+
+module.exports = countStudents;
