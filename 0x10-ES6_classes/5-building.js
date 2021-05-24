@@ -15,8 +15,4 @@ export default class Building {
   // set sqft(sqft) {
   //   this._sqft = sqft;
   // }
-
-  evacuationWarningMessage() {
-    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
-  }
 }
