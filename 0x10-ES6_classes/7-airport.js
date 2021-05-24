@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-class Airport {
+export default class Airport {
   constructor(name, code) {
     this._name = name;
     this._code = code;
@@ -9,5 +9,3 @@ class Airport {
     return `[object ${this._code}]`;
   }
 }
-
-export default Airport;
