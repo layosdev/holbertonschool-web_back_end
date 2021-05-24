@@ -1,0 +1,30 @@
+/* eslint-disable no-underscore-dangle */
+export default class Currency {
+  constructor(code, name) {
+    this.code = code;
+    this.name = name;
+  }
+
+  // getters
+  get code() {
+    return this._code;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  // setters
+
+  set code(code) {
+    this._code = code;
+  }
+
+  set name(name) {
+    this._name = name;
+  }
+
+  displayFullCurrency() {
+    return `${this.name} (${this.code})`;
+  }
+}
