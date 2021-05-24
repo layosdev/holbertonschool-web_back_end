@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-class Car {
+export default class Car {
   constructor(brand, motor, color) {
     this._brand = brand;
     this._motor = motor;
@@ -10,5 +10,3 @@ class Car {
     return new this.constructor();
   }
 }
-
-export default Car;
