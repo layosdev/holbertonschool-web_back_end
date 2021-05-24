@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
   // Getters
@@ -33,12 +33,8 @@ export default class HolbertonCourse {
   }
 
   set students(students) {
-    if (
-      Array.isArray(
-        students && students.every((student) => typeof student === 'string'),
-      )
-    ) {
+    if (Array.isArray(students)) {
       this._students = students;
-    } else throw new TypeError('Error');
+    }
   }
 }
