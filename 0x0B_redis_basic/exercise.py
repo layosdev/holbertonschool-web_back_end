@@ -82,3 +82,11 @@ class Cache:
                 return fn(self._redis.get(key))
             else:
                 return self._redis.get(key)
+
+    def get_str(self, data: str) -> str:
+        """str"""
+        return self._redis.get(data).decode('utf-8')
+
+    def get_int(self, data: str) -> int:
+        """int"""
+        return int(self._redis.get(data))
